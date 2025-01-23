@@ -54,7 +54,6 @@ nav a:hover {
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
-
 .container {
     display: flex;
     justify-content: center;
@@ -72,7 +71,7 @@ canvas {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: #1a3956;
+    background-color: #1b3a57;
     padding: 20px;
     border-radius: 10px;
     color: white;
@@ -101,6 +100,8 @@ canvas {
 .controls button:hover {
     background-color: #005bb5;
 }
+
+
 
 footer {
     margin-top: auto;

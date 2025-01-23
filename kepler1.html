@@ -16,21 +16,26 @@
         <a href="kepler2.html">2 Закон Кеплера</a>
         <a href="kepler3.html">3 Закон Кеплера</a>
     </nav>
+    <div class="main" id="home">
+        <h2>Перший закон Кеплера</h2>
+        <p>Перший закон руху планет Кеплера описує форму орбіт планет навколо Сонця і відомий також як закон еліпсів. У ньому зазначається, що:<br/><br/>Планети рухаються по еліптичних орбітах, причому Сонце знаходиться в одному з фокусів.<br/><br/>
+        Еліпси — це витягнуті кола. Орбіти планет у Сонячній системі є еліптичними, однак їхній ексцентриситет настільки малий, що вони виглядають майже як кола. Сонце розташоване в одному з фокусів цих еліптичних орбіт, зміщених відносно центру.</p>
+    </div>
 
     <div class="container">
         <canvas id="orbitCanvas" width="1000" height="700"></canvas>
-        <div class="controls">
-            <label for="planetSelect">Select Planet: </label>
+        <div class="controls">    
+            <label for="planetSelect">Виберіть Планету: </label>
             <select id="planetSelect"></select>
 
-            <label for="semiMajorAxis">Semi-Major Axis (a): </label>
+            <label for="semiMajorAxis">Велика напіввісь (a): </label>
             <input type="number" id="semiMajorAxis" value="200" step="10" min="50" max="300">
 
-            <label for="Эксцентриситет">Eccentricity (e): </label>
+            <label for="Eccentricity">Ексцентриситет (e): </label>
             <input type="number" id="eccentricity" value="0.5" step="0.1" min="0" max="2">
 
-            <label for="speedFactor">Speed: </label>
-            <input type="number" id="speedFactor" value="1" step="0.1" min="0.1" max="2">
+            <label for="speedFactor">Швидкість: </label>
+            <input type="number" id="speedFactor" value="0.5" step="0.1" min="0.1" max="2">
 
             <button onclick="updateOrbit()">Update Orbit</button>
             <button onclick="toggleAnimation()">Start/Stop</button>
@@ -41,5 +46,6 @@
         &copy; 2024 Закони Кеплера | Всі права захищені
     </footer>
     <script src="js/script.js"></script>
+    <script src="js/zoom.js"></script>
 </body>
 </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Закони Кеплера</title>
+    <link rel="stylesheet" href="css/kepler3.css">
+</head>
+<body>
+    <header>
+        <h1>Закони Кеплера</h1>
+    </header>
+    <nav>
+        <a href="home.html">Головна</a>
+        <a href="kepler1.html">1 Закон Кеплера</a>
+        <a href="kepler2.html">2 Закон Кеплера</a>
+        <a href="kepler3.html">3 Закон Кеплера</a>
+    </nav>
+    <div class="main" id="home">
+        <h2>Третій закон Кеплера</h2>
+        <p>Третій закон Кеплера описує взаємозв'язок між рухом різних планет і також називається законом гармоній. <br /><br /> 
+            Він стверджує, що: Квадрат орбітального періоду планети (T) прямо пропорційний кубу великої півосі (a) її орбіти.<br /><br /> 
+            У вигляді рівняння це записується так:<br /><br /> 
+            T²/a³ = const,<br /><br /> 
+            або, для двох планет з орбітальними періодами T і T' та великими півосями a і a':<br /><br /> 
+            T²/a³ = T'²/a'³.<br /><br /> 
+            Оскільки це співвідношення завжди однакове, планети з більшими орбітами (більшим значенням a) мають довші роки (більше значення T): тобто їм потрібно більше часу для завершення одного оберту навколо Сонця.<br /><br /> 
+            Коефіцієнт пропорційності між T² і a³ називають сталою Кеплера, або K. Її значення є однаковим для орбіт усіх планет Сонячної системи. Водночас кожна система, де є орбіти, матиме власну сталу K, спільну для всіх об'єктів у цій системі, але вона може відрізнятися від значення K в інших системах.</p>
+    </div>
+    <div class="container">
+        <canvas id="orbitCanvas" width="1000" height="700"></canvas>
+        <div class="controls">
+            <label for="planetSelect">Select Planet: </label>
+            <select id="planetSelect"></select>
+
+            <label for="semiMajorAxis">Semi-Major Axis (a): </label>
+            <input type="number" id="semiMajorAxis" value="200" step="10" min="50" max="300">
+
+            <label for="Эксцентриситет">Eccentricity (e): </label>
+            <input type="number" id="eccentricity" value="0.5" step="0.1" min="0" max="2">
+
+            <label for="speedFactor">Speed: </label>
+            <input type="number" id="speedFactor" value="1" step="0.1" min="0.1" max="2">
+
+            <button onclick="updateOrbit()">Update Orbit</button>
+            <button onclick="toggleAnimation()">Start/Stop</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Закони Кеплера | Всі права захищені
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

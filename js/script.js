@@ -6,11 +6,11 @@ const height = canvas.height;
 
 // Реальные данные планет для отображения орбит (в млн км и без массы)
 const planets = {
-    Mercury: { semiMajorAxis: 57.9, eccentricity: 0.2056 },
-    Venus: { semiMajorAxis: 108.2, eccentricity: 0.0067 },
-    Earth: { semiMajorAxis: 149.6, eccentricity: 0.0167 },
-    Mars: { semiMajorAxis: 227.9, eccentricity: 0.0934 },
-    Jupiter: { semiMajorAxis: 778.6, eccentricity: 0.0489 }
+    Меркурій: { semiMajorAxis: 57.9, eccentricity: 0.2056 },
+    Венера: { semiMajorAxis: 108.2, eccentricity: 0.0067 },
+    Земля: { semiMajorAxis: 149.6, eccentricity: 0.0167 },
+    Марс: { semiMajorAxis: 227.9, eccentricity: 0.0934 },
+    Юпітер: { semiMajorAxis: 778.6, eccentricity: 0.0489 }
 };
 
 let selectedPlanet = "Earth"; 
@@ -82,7 +82,7 @@ function animate() {
 
     // Возвращение зависимости скорости от радиус-вектора
     const speedFactor = parseFloat(document.getElementById('speedFactor').value) || 1;
-const angularSpeed = speedFactor * 10000 / Math.pow(distance, 1.5);
+const angularSpeed = speedFactor * 5000 / Math.pow(distance, 1.5);
 
 
     angle += angularSpeed * 0.01;
