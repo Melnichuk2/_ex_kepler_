@@ -83,18 +83,20 @@ function animate() {
 
     // Возвращение зависимости скорости от радиус-вектора
     const speedFactor = parseFloat(document.getElementById('speedFactor').value) || 1;
-const angularSpeed = speedFactor * 5000 / Math.pow(distance, 1.5);
-
+    const angularSpeed = speedFactor * 5000 / Math.pow(distance, 1.5); // Вторая зависимость
 
     angle += angularSpeed * 0.01;
 
     ctx.clearRect(0, 0, width, height);
+
+    // Обновление всех элементов
     drawOrbit(semiMajorAxis, eccentricity);
+    drawSectors(semiMajorAxis, eccentricity, angle); // Передача текущего угла
     drawPlanet(semiMajorAxis, eccentricity);
-    drawLinesAndFocus(semiMajorAxis, eccentricity, angle); // Новая функция
 
     animationId = requestAnimationFrame(animate);
 }
+
 
 function toggleAnimation() {
     if (isAnimating) {

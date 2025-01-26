@@ -109,3 +109,14 @@ footer {
     text-align: center;
     font-size: 0.9rem;
 }
+
+input[type="checkbox"] {
+    accent-color: #1a3956;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle; /* Выравнивание по вертикали */
+}
+
+label {
+    vertical-align: middle; /* Убедиться, что текст тоже выровнен */
+}
