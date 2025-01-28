@@ -4,7 +4,10 @@ let showAxes = false;  // Флаг для отображения осей орб
 function drawAxes(semiMajorAxis, eccentricity) {
     if (!showAxes) return;
 
-    const scale = 1.5;
+    const planetName = selectedPlanet;
+    const baseScale = getBaseScale(planetName); // Получаем базовый масштаб для выбранной планеты
+    const scale = 10 * baseScale;
+
     const cx = width / 2;
     const cy = height / 2;
     const orbitRadiusX = semiMajorAxis * scale;
@@ -30,7 +33,10 @@ function drawAxes(semiMajorAxis, eccentricity) {
 function drawOrbit(semiMajorAxis, eccentricity) {
     ctx.clearRect(0, 0, width, height);
 
-    const scale = 1.5;
+    const planetName = selectedPlanet;
+    const baseScale = getBaseScale(planetName); // Получаем базовый масштаб для выбранной планеты
+    const scale = 10 * baseScale;
+    
     const cx = width / 2;
     const cy = height / 2;
     const focusX = cx + semiMajorAxis * eccentricity * scale;
@@ -45,7 +51,7 @@ function drawOrbit(semiMajorAxis, eccentricity) {
     ctx.arc(focusX, cy, 5, 0, 2 * Math.PI);
     ctx.fillStyle = 'orange';
     ctx.fill();
-    ctx.fillText('Sun', focusX + 10, cy);
+    ctx.fillText('Сонце', focusX + 10, cy);
 
     drawAxes(semiMajorAxis, eccentricity);  // Рисуем оси
 }

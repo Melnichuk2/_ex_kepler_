@@ -31,7 +31,7 @@
             <select id="planetSelect"></select>
 
             <label for="semiMajorAxis">Semi-Major Axis (a): </label>
-            <input type="number" id="semiMajorAxis" value="200" step="10" min="50" max="300">
+            <input type="number" id="semiMajorAxis" value="20" step="10" min="50" max="300">
 
             <label for="Эксцентриситет">Eccentricity (e): </label>
             <input type="number" id="eccentricity" value="0.5" step="0.1" min="0" max="2">
@@ -41,6 +41,9 @@
 
             <label for="sectorCount">Кількість секторів: </label>
             <input type="number" id="sectorCount" value="2" min="2" max="6" step="1">
+
+            <label for="scaleFactor">Масштаб:</label>
+            <input id="scaleFactor" type="range" min="1" max="20" step="1" value="10">
  
             <button onclick="calculateTimes()">Розрахувати час</button>
 
@@ -57,7 +60,7 @@
     <footer>
         &copy; 2024 Закони Кеплера | Всі права захищені
     </footer>
-    <script src="js/script.js"></script>
+    <script src="js/exp_vector.js"></script>
     <script src="js/kepler2.js"></script>
     <script src="js/calculateTime.js"></script>
 </body>

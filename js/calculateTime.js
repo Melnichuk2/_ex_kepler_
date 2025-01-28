@@ -1,7 +1,11 @@
 function calculateTimes() {
     const semiMajorAxis = parseFloat(document.getElementById('semiMajorAxis').value) || 200;
     const eccentricity = parseFloat(document.getElementById('eccentricity').value) || 0.5;
-    const scale = 1.5;
+    
+    const planetName = selectedPlanet;
+    const baseScale = getBaseScale(planetName); // Получаем базовый масштаб для выбранной планеты
+    const scale = 10 * baseScale;
+
     const cx = width / 2;
     const cy = height / 2;
     const orbitRadiusX = semiMajorAxis * scale;

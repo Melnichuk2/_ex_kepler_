@@ -34,7 +34,11 @@ function calculateSectorAngles(semiMajorAxis, eccentricity, sectorCount) {
 }
 function drawSectors(semiMajorAxis, eccentricity) {
     const angles = calculateSectorAngles(semiMajorAxis, eccentricity, sectorCount); // Вычисляем углы с учетом равных площадей
-    const scale = 1.5;
+    
+    const planetName = selectedPlanet;
+    const baseScale = getBaseScale(planetName); // Получаем базовый масштаб для выбранной планеты
+    const scale = 10 * baseScale;
+
     const cx = width / 2;
     const cy = height / 2;
     const orbitRadiusX = semiMajorAxis * scale;
@@ -65,7 +69,11 @@ function drawSectors(semiMajorAxis, eccentricity) {
 
 
 function drawOrbit(semiMajorAxis, eccentricity) {
-    const scale = 1.5;
+    
+    const planetName = selectedPlanet;
+    const baseScale = getBaseScale(planetName); // Получаем базовый масштаб для выбранной планеты
+    const scale = 10 * baseScale;
+
     const cx = width / 2;
     const cy = height / 2;
     const focusX = cx + semiMajorAxis * eccentricity * scale;
@@ -82,11 +90,15 @@ function drawOrbit(semiMajorAxis, eccentricity) {
     ctx.arc(focusX, cy, 5, 0, 2 * Math.PI);
     ctx.fillStyle = 'orange';
     ctx.fill();
-    ctx.fillText('Sun', focusX + 10, cy);
+    ctx.fillText('Сонце', focusX + 10, cy);
 }
 
 function drawPlanet(semiMajorAxis, eccentricity) {
-    const scale = 1.5;
+    
+    const planetName = selectedPlanet;
+    const baseScale = getBaseScale(planetName); // Получаем базовый масштаб для выбранной планеты
+    const scale = 10 * baseScale;
+
     const cx = width / 2;
     const cy = height / 2;
     const orbitRadiusX = semiMajorAxis * scale;
@@ -120,7 +132,10 @@ function animate() {
     const semiMajorAxis = parseFloat(document.getElementById('semiMajorAxis').value) || planets[selectedPlanet].semiMajorAxis;
     const eccentricity = parseFloat(document.getElementById('eccentricity').value) || planets[selectedPlanet].eccentricity;
 
-    const scale = 1.5;
+    const planetName = selectedPlanet;
+    const baseScale = getBaseScale(planetName); // Получаем базовый масштаб для выбранной планеты
+    const scale = 10 * baseScale;
+    
     const cx = width / 2;
     const cy = height / 2;
     const orbitRadiusX = semiMajorAxis * scale;

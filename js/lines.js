@@ -4,7 +4,10 @@ let showLines = false; // Флаг для отображения соедини�
 function drawLinesAndFocus(semiMajorAxis, eccentricity, angle) {
     if (!showLines) return;
 
-    const scale = 1.5;
+    const planetName = selectedPlanet;
+    const baseScale = getBaseScale(planetName); // Получаем базовый масштаб для выбранной планеты
+    const scale = 10 * baseScale;
+
     const cx = width / 2;
     const cy = height / 2;
     const orbitRadiusX = semiMajorAxis * scale;
